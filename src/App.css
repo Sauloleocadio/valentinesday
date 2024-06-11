@@ -1,38 +1,90 @@
-.App {
+.initial {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  max-width: 480px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.initial span {
+  color: red;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.buttonLoop {
+  font-weight: bold;
+  background: hsl(340deg 100% 32%);
+  border-radius: 12px;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.front {
+  display: block;
+  padding: 12px 42px;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  background: hsl(345deg 100% 47%);
+  color: white;
+  transform: translateY(-6px);
+}
+
+.buttonLoop:active .front {
+  transform: translateY(-2px);
+}
+
+.parent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.child {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 32px;
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.child h1 {
+  font-size: 32px;
+  opacity: 0;
+  animation: fadeIn 7s infinite;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.child h2 {
+  font-size: 32px;
+  width: 100%;
+  font-family: "Dancing Script", cursive;
+}
+
+@keyframes fadeIn {
+  0%,
+  100% {
+    opacity: 0;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    opacity: 1;
   }
+}
+
+.polaroid {
+  width: 200px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  animation: fadeIn 7s infinite;
+}
+
+.photo {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
 }
